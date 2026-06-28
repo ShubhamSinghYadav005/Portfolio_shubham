@@ -1,0 +1,217 @@
+/* ============================================
+   RESPONSIVE DESIGN - PRD Section 27
+   Mobile First → Tablet → Desktop → Ultra-wide
+   ============================================ */
+
+/* ---------- Mobile: 320px – 767px ---------- */
+@media (max-width: 767px) {
+  :root {
+    --nav-height: 60px;
+  }
+
+  section {
+    padding: var(--space-xl) 0;
+    min-height: auto;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Navigation */
+  .nav__hamburger { display: flex; }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    background: rgba(5, 8, 22, 0.96);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: calc(var(--nav-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+    transition: right 0.4s var(--ease-smooth);
+    border-left: 1px solid var(--border);
+    z-index: 105;
+  }
+  .nav__links.open {
+    right: 0;
+  }
+
+  /* Disable custom cursor on mobile */
+  .cursor, .cursor-dot { display: none !important; }
+
+  /* Hero */
+  .hero { padding: var(--space-xl) var(--space-md); min-height: 100vh; }
+  .hero__name { font-size: clamp(2rem, 10vw, 3rem); }
+  .hero__titles { flex-direction: column; gap: var(--space-sm); font-size: 0.95rem; }
+  .hero__titles .divider { display: none; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
+  .hero__scroll-indicator { display: none; }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .about__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+  .stat-card { padding: var(--space-md); }
+  .stat-card__number { font-size: 1.4rem; }
+  .stat-card__label { font-size: 0.7rem; }
+
+  /* Education */
+  .edu-card {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  /* Experience */
+  .exp-card { padding: var(--space-md); }
+  .exp-card__header { flex-direction: column; }
+
+  /* Projects */
+  .project-featured { padding: var(--space-md); }
+  .project-featured__workflow { padding: var(--space-md); gap: var(--space-xs); }
+  .workflow-step { font-size: 0.7rem; padding: 4px 8px; }
+  .workflow-arrow { font-size: 0.6rem; }
+  .project-featured__actions { flex-direction: column; }
+  .project-featured__actions .btn { justify-content: center; }
+
+  .project-secondary__content { padding: var(--space-md); }
+
+  /* Skills */
+  .skills__grid { grid-template-columns: 1fr; }
+  .skill-category { padding: var(--space-md); }
+  .skill-orbit { width: 200px; height: 200px; }
+  .skill-orbit__core { width: 60px; height: 60px; font-size: 1.2rem; }
+  .skill-orbit__ring--1 { width: 120px; height: 120px; }
+  .skill-orbit__ring--2 { width: 170px; height: 170px; }
+  .skill-orbit__ring--3 { width: 200px; height: 200px; }
+
+  /* Achievements */
+  .achievement-stats { grid-template-columns: repeat(2, 1fr); }
+  .achievement-stat { padding: var(--space-md); }
+  .achievement-cards { grid-template-columns: 1fr; }
+  .achievement-card { padding: var(--space-md); }
+
+  /* Leadership */
+  .leadership-cards { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact__links { flex-direction: column; align-items: stretch; }
+  .contact-link { justify-content: center; }
+  .contact__email { font-size: 0.9rem; padding: var(--space-sm) var(--space-md); }
+
+  /* Footer */
+  .footer__inner { flex-direction: column; text-align: center; }
+
+  /* Reduce effects on mobile */
+  .grid-bg { opacity: 0.04; }
+  .glass-card { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+  /* Simplify parallax on mobile */
+  .parallax { transform: none !important; }
+}
+
+/* ---------- Tablet: 768px – 1023px ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav__hamburger { display: flex; }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    max-width: 350px;
+    height: 100vh;
+    flex-direction: column;
+    background: rgba(5, 8, 22, 0.96);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: calc(var(--nav-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+    transition: right 0.4s var(--ease-smooth);
+    border-left: 1px solid var(--border);
+    z-index: 105;
+  }
+  .nav__links.open {
+    right: 0;
+  }
+
+  /* Disable custom cursor on tablet */
+  .cursor, .cursor-dot { display: none !important; }
+
+  .about__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: repeat(3, 1fr); }
+
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+
+  .achievement-stats { grid-template-columns: repeat(4, 1fr); }
+  .achievement-cards { grid-template-columns: repeat(2, 1fr); }
+
+  .project-featured__workflow { flex-wrap: wrap; }
+
+  /* Reduce particle count and blur */
+  .grid-bg { opacity: 0.05; }
+}
+
+/* ---------- Laptop: 1024px – 1439px ---------- */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* ---------- Desktop: 1440px+ ---------- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: var(--container-max);
+  }
+}
+
+/* ---------- Ultra-wide: 1920px+ ---------- */
+@media (min-width: 1920px) {
+  .container {
+    max-width: var(--container-wide);
+  }
+
+  h1 { font-size: 5rem; }
+  h2 { font-size: 3rem; }
+
+  .hero__name { font-size: 5.5rem; }
+}
+
+/* ---------- Touch Device Optimization ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .cursor, .cursor-dot { display: none !important; }
+
+  /* Larger touch targets */
+  .btn { padding: 16px 36px; min-height: 48px; }
+  .nav__link { padding: var(--space-sm) var(--space-md); }
+  .skill-item { padding: 12px 18px; }
+  .contact-link { padding: 16px 28px; }
+
+  /* Disable hover-dependent effects */
+  .tilt-card:hover { transform: none; }
+  .scan-effect:hover::before { animation: none; }
+  .neon-border::after { display: none; }
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  .nav, .cursor, .cursor-dot, .video-layer, .video-overlay,
+  .grid-bg, #particles-canvas, .loader, .scroll-progress,
+  .hero__scroll-indicator { display: none !important; }
+
+  body { background: #fff; color: #000; }
+  section { min-height: auto; padding: 1rem 0; }
+  .glass-card { background: #f5f5f5; border: 1px solid #ddd; backdrop-filter: none; }
+  .text-gradient { -webkit-text-fill-color: #000; }
+}

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags - PRD Section 30 -->
+  <title>Shubham Singh | Software Engineer & Competitive Programmer</title>
+  <meta name="description" content="Shubham Singh — Software Engineer, Competitive Programmer, and Full Stack Developer. Explore my portfolio featuring projects, skills, and achievements in software development and competitive programming.">
+  <meta name="keywords" content="Shubham Singh, Software Engineer, Competitive Programmer, Full Stack Developer, Portfolio, React, Node.js, C++">
+  <meta name="author" content="Shubham Singh">
+  <link rel="canonical" href="https://shubhamsingh.dev">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shubham Singh | Software Engineer & Competitive Programmer">
+  <meta property="og:description" content="Explore the futuristic interactive portfolio of Shubham Singh — Software Engineer, Competitive Programmer, and Full Stack Developer.">
+  <meta property="og:url" content="https://shubhamsingh.dev">
+  <meta property="og:site_name" content="Shubham Singh Portfolio">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shubham Singh | Software Engineer">
+  <meta name="twitter:description" content="Explore the futuristic interactive portfolio of Shubham Singh.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- LOADING SCREEN - AI Boot Sequence            -->
+  <!-- PRD Section 26                                -->
+  <!-- ============================================ -->
+  <div class="loader" id="loader" role="alert" aria-live="assertive" aria-label="Loading portfolio">
+    <div class="loader__content">
+      <div class="loader__logo">SHUBHAM.SYS</div>
+      <div class="loader__lines" aria-hidden="true">
+        <div class="loader__line"><span class="status">&gt;</span> Initializing System...</div>
+        <div class="loader__line"><span class="status">&gt;</span> Loading Assets...</div>
+        <div class="loader__line"><span class="status">&gt;</span> Synchronizing Environment...</div>
+        <div class="loader__line"><span class="status">&gt;</span> Rendering Interface...</div>
+        <div class="loader__line"><span class="status">&gt;</span> Portfolio Ready.</div>
+      </div>
+      <div class="loader__bar-container">
+        <div class="loader__bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- CUSTOM CURSOR (Desktop Only)                  -->
+  <!-- ============================================ -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ============================================ -->
+  <!-- SCROLL PROGRESS BAR                           -->
+  <!-- ============================================ -->
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- ============================================ -->
+  <!-- VIDEO BACKGROUND LAYER                        -->
+  <!-- PRD Sections 21, 22                           -->
+  <!-- ============================================ -->
+  <div class="video-layer" aria-hidden="true">
+    <video class="video-layer__video active" preload="auto" muted playsinline>
+      <source src="video/1.mp4" type="video/mp4">
+    </video>
+    <video class="video-layer__video" preload="metadata" muted playsinline>
+      <source src="video/2.mp4" type="video/mp4">
+    </video>
+    <video class="video-layer__video" preload="metadata" muted playsinline>
+      <source src="video/3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- ============================================ -->
+  <!-- ANIMATED BACKGROUND GRID                      -->
+  <!-- ============================================ -->
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- ============================================ -->
+  <!-- PARTICLES CANVAS                              -->
+  <!-- ============================================ -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================ -->
+  <!-- NAVIGATION                                    -->
+  <!-- PRD Section 14                                -->
+  <!-- ============================================ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Shubham Singh - Home">SS.</a>
+      <button class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" role="menubar">
+        <li role="none"><a href="#hero" class="nav__link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" class="nav__link" role="menuitem">About</a></li>
+        <li role="none"><a href="#projects" class="nav__link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#skills" class="nav__link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#achievements" class="nav__link" role="menuitem">Achievements</a></li>
+        <li role="none"><a href="#contact" class="nav__link" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- MAIN CONTENT                                  -->
+  <!-- ============================================ -->
+  <main>
+
+    <!-- ========== SCENE 1: HERO ========== -->
+    <!-- PRD Section 9, 15                    -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero__content">
+        <p class="hero__greeting hero-anim-text entrance-1">// Hello, World</p>
+        <h1 class="hero__name hero-anim-text entrance-2">
+          <span class="text-gradient">SHUBHAM</span> SINGH
+        </h1>
+        <div class="hero__titles hero-anim-text entrance-3">
+          <span>Software Engineer</span>
+          <span class="divider" aria-hidden="true"></span>
+          <span>Competitive Programmer</span>
+          <span class="divider" aria-hidden="true"></span>
+          <span>Full Stack Developer</span>
+        </div>
+        <p class="hero__tagline hero-anim-text entrance-4">
+          "Engineering the Future, One Algorithm at a Time."
+        </p>
+        <div class="hero__cta hero-anim-btn entrance-5">
+          <a href="#about" class="btn btn--primary magnetic-btn" id="cta-explore">
+            <span>Explore Portfolio</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="resume/resume.pdf" download class="btn btn--secondary magnetic-btn" id="cta-resume">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 2: ABOUT ========== -->
+    <!-- PRD Section 16                        -->
+    <section id="about" class="about" aria-label="About Me">
+      <div class="container">
+        <div class="about__grid">
+          <!-- Left Column -->
+          <div class="about__left">
+            <div class="section-label reveal">About Me</div>
+            <h2 class="section-title reveal">
+              Building <span class="text-gradient">Digital Solutions</span>
+            </h2>
+            <p class="about__text reveal">
+              I'm Shubham Singh, a B.Tech Computer Science student at Madan Mohan Malaviya University of Technology, Gorakhpur. I'm passionate about software engineering, competitive programming, and building scalable full-stack applications. With 300+ problems solved on LeetCode and a 2-star rating on CodeChef, I thrive on algorithmic problem-solving and pushing the boundaries of what's possible with code.
+            </p>
+            <p class="about__text reveal">
+              As a Competitive Programming Mentor and active member of the Hack With India chapter at MMMUT, I help peers grow their skills and contribute to the developer community. I believe in crafting solutions that are not just functional, but elegant and performant.
+            </p>
+
+            <div class="about__stats stagger">
+              <div class="stat-card glass-card reveal">
+                <span class="stat-card__number" data-count="300" data-suffix="+">0+</span>
+                <span class="stat-card__label">Problems Solved</span>
+              </div>
+              <div class="stat-card glass-card reveal">
+                <span class="stat-card__number" data-count="1450" data-suffix="+">0+</span>
+                <span class="stat-card__label">Contest Rating</span>
+              </div>
+              <div class="stat-card glass-card reveal">
+                <span class="stat-card__number" data-count="8" data-suffix=".33">0</span>
+                <span class="stat-card__label">CGPA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Timeline -->
+          <div class="about__right">
+            <div class="section-label reveal">My Journey</div>
+            <div class="timeline reveal">
+              <div class="timeline__item">
+                <div class="timeline__date">2024 – 2028</div>
+                <div class="timeline__title">B.Tech Computer Science & Engineering</div>
+                <div class="timeline__subtitle">MMMUT, Gorakhpur</div>
+                <div class="timeline__desc">CGPA: 8.33 — Pursuing computer science with focus on algorithms, data structures, and software development.</div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__date">Current</div>
+                <div class="timeline__title">Competitive Programming Mentor</div>
+                <div class="timeline__subtitle">Peer Learning, MMMUT</div>
+                <div class="timeline__desc">Assisting juniors in understanding C++ STL and basic DSA concepts. Helping peers solve coding problems and debug programs.</div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__date">Current</div>
+                <div class="timeline__title">Co-Sponsorship Team Lead</div>
+                <div class="timeline__subtitle">Hack With India, MMMUT Chapter</div>
+                <div class="timeline__desc">Leading sponsorship efforts and contributing to community-driven tech events and hackathons.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education" class="education" aria-label="Education">
+      <div class="container">
+        <div class="section-label reveal">Education</div>
+        <h2 class="section-title reveal">Academic <span class="text-gradient">Background</span></h2>
+        <div class="edu-cards stagger">
+          <div class="edu-card glass-card tilt-card reveal">
+            <div class="edu-card__icon" aria-hidden="true">🎓</div>
+            <div class="edu-card__info">
+              <h4>B.Tech — Computer Science & Engineering</h4>
+              <p class="edu-card__institution">Madan Mohan Malaviya University of Technology, Gorakhpur</p>
+              <div class="edu-card__meta">
+                <span>2024 – 2028</span>
+                <span>CGPA: 8.33</span>
+              </div>
+            </div>
+          </div>
+          <div class="edu-card glass-card tilt-card reveal">
+            <div class="edu-card__icon" aria-hidden="true">📚</div>
+            <div class="edu-card__info">
+              <h4>Senior Secondary (Class XII)</h4>
+              <p class="edu-card__institution">Little Flower House, Nagwa, Varanasi, Uttar Pradesh</p>
+              <div class="edu-card__meta">
+                <span>CBSE — 2022</span>
+                <span>Percentage: 76%</span>
+              </div>
+            </div>
+          </div>
+          <div class="edu-card glass-card tilt-card reveal">
+            <div class="edu-card__icon" aria-hidden="true">📖</div>
+            <div class="edu-card__info">
+              <h4>Secondary (Class X)</h4>
+              <p class="edu-card__institution">Maa Vaishno Modern Public School, Robertsganj, Sonebhadra, UP</p>
+              <div class="edu-card__meta">
+                <span>CBSE — 2020</span>
+                <span>Percentage: 92.4%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience" class="experience" aria-label="Experience">
+      <div class="container">
+        <div class="section-label reveal">Experience</div>
+        <h2 class="section-title reveal">Professional <span class="text-gradient">Experience</span></h2>
+        <div class="exp-card glass-card tilt-card reveal">
+          <div class="exp-card__header">
+            <div>
+              <h3 class="exp-card__role">Competitive Programming Mentor</h3>
+              <p class="exp-card__company">Peer Learning — MMMUT, Gorakhpur</p>
+            </div>
+            <span class="exp-card__date">Current</span>
+          </div>
+          <ul class="exp-card__bullets">
+            <li>Assisted juniors in understanding C++ STL and basic DSA concepts</li>
+            <li>Helped peers solve coding problems and debug programs</li>
+            <li>Guided students through competitive programming problem-solving strategies</li>
+            <li>Conducted peer learning sessions on dynamic programming and graph algorithms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LEADERSHIP ========== -->
+    <section id="leadership" class="leadership" aria-label="Leadership & Positions of Responsibility">
+      <div class="container">
+        <div class="section-label reveal">Leadership</div>
+        <h2 class="section-title reveal">Positions of <span class="text-gradient">Responsibility</span></h2>
+        <div class="leadership-cards stagger">
+          <div class="leadership-card glass-card tilt-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">🏆</div>
+            <h3 class="leadership-card__role">Co-Sponsorship Team Lead</h3>
+            <p class="leadership-card__org">Hack With India — MMMUT Chapter</p>
+            <p class="leadership-card__period">Current</p>
+          </div>
+          <div class="leadership-card glass-card tilt-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">⚡</div>
+            <h3 class="leadership-card__role">Executive Member</h3>
+            <p class="leadership-card__org">Hack With India — MMMUT Chapter</p>
+            <p class="leadership-card__period">July 2025 – April 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 3: PROJECTS ========== -->
+    <!-- PRD Section 17                            -->
+    <section id="projects" class="projects" aria-label="Projects">
+      <div class="container">
+        <div class="section-label reveal">Projects</div>
+        <h2 class="section-title reveal">Featured <span class="text-gradient">Work</span></h2>
+
+        <!-- Featured Project: OASIS -->
+        <div class="project-featured tilt-card reveal">
+          <div class="project-featured__badge">
+            <span>⭐</span> Featured Project — Team of 4
+          </div>
+          <h3 class="project-featured__title text-gradient">Oasis</h3>
+          <p class="project-featured__subtitle">One Platform for Every Campus Event</p>
+          <p class="project-featured__desc">
+            A centralized college event management platform built by a team of four members. Oasis streamlines the entire event lifecycle — from registration to attendance tracking to certificate distribution — providing dedicated modules for students, organizers, and administrators.
+          </p>
+
+          <!-- Interactive Workflow -->
+          <div class="project-featured__workflow" aria-label="Oasis platform workflow">
+            <div class="workflow-step"><span class="icon">👤</span> Student</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">📋</span> Registration</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">🎯</span> Organizer</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">✅</span> Attendance</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">🛡️</span> Admin</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">📜</span> Certificates</div>
+            <span class="workflow-arrow" aria-hidden="true">→</span>
+            <div class="workflow-step"><span class="icon">📊</span> Dashboard</div>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT Auth</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+
+          <div class="project-featured__actions">
+            <a href="https://github.com/ShubhamSinghYadav005" target="_blank" rel="noopener noreferrer" class="btn btn--primary magnetic-btn" id="btn-oasis-github">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>View on GitHub</span>
+            </a>
+            <a href="#" class="btn btn--secondary magnetic-btn" id="btn-oasis-details">
+              <span>View Details</span>
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Secondary Project: Algorithmic Optimization Suite -->
+        <div class="project-secondary tilt-card reveal">
+          <div class="project-secondary__terminal-bar" aria-hidden="true">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+            <span class="terminal-title">algorithm_suite.cpp</span>
+          </div>
+          <div class="project-secondary__content">
+            <h3 class="project-secondary__title text-gradient">Algorithmic Optimization Suite</h3>
+            <p class="project-secondary__desc">
+              A comprehensive collection of 150+ algorithmic solutions focused on time complexity reduction, dynamic programming, and graph algorithms. Leveraging C++ STL for optimal performance, this suite demonstrates deep expertise in competitive programming and problem-solving.
+            </p>
+
+            <!-- Code Snippet -->
+            <div class="code-snippet" aria-label="Code example">
+<span class="comment">// Dynamic Programming — Optimized Solution</span>
+<span class="keyword">#include</span> <span class="string">&lt;bits/stdc++.h&gt;</span>
+<span class="keyword">using namespace</span> std;
+
+<span class="keyword">int</span> <span class="function">solve</span>(<span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; arr, <span class="keyword">int</span> n) {
+    <span class="keyword">vector</span>&lt;<span class="keyword">int</span>&gt; dp(n + <span class="number">1</span>, <span class="number">0</span>);
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)
+        dp[i] = <span class="function">max</span>(dp[i-<span class="number">1</span>], arr[i] + dp[i-<span class="number">2</span>]);
+    <span class="keyword">return</span> dp[n]; <span class="comment">// O(n) optimized</span>
+}
+            </div>
+
+            <div class="tech-stack">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">STL</span>
+              <span class="tech-tag">Dynamic Programming</span>
+              <span class="tech-tag">Graph Algorithms</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">Complexity Optimization</span>
+            </div>
+
+            <div class="project-featured__actions">
+              <a href="https://leetcode.com/u/__shubham_005/" target="_blank" rel="noopener noreferrer" class="btn btn--primary magnetic-btn" id="btn-algo-leetcode">
+                <span>View on LeetCode</span>
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/ShubhamSinghYadav005" target="_blank" rel="noopener noreferrer" class="btn btn--secondary magnetic-btn" id="btn-algo-github">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Project: Dev-Metrics -->
+        <div class="project-secondary tilt-card reveal" style="margin-top: var(--space-xl);">
+          <div class="project-secondary__terminal-bar" aria-hidden="true">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+            <span class="terminal-title">dev-metrics/index.html</span>
+          </div>
+          <div class="project-secondary__content">
+            <h3 class="project-secondary__title text-gradient">Dev-Metrics: Coding Profile Visualizer</h3>
+            <p class="project-secondary__desc">
+              A responsive dashboard that aggregates coding statistics from LeetCode and CodeChef, visualizing problem-solving progress and difficulty distribution using custom CSS components. Built with modern vanilla web technologies for optimal performance.
+            </p>
+
+            <div class="tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Data Visualization</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+
+            <div class="project-featured__actions">
+              <a href="https://github.com/ShubhamSinghYadav005" target="_blank" rel="noopener noreferrer" class="btn btn--secondary magnetic-btn" id="btn-devmetrics-github">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>View Source</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 4: SKILLS ========== -->
+    <!-- PRD Section 18                          -->
+    <section id="skills" class="skills" aria-label="Technical Skills">
+      <div class="container">
+        <div class="section-label reveal">Skills</div>
+        <h2 class="section-title reveal">Technical <span class="text-gradient">Arsenal</span></h2>
+
+        <!-- Skill Orbit Visual -->
+        <div class="skill-orbit reveal" aria-hidden="true">
+          <div class="skill-orbit__core">⚡</div>
+          <div class="skill-orbit__ring skill-orbit__ring--1">
+            <div class="orbit-item" style="top: 0; left: 50%; transform: translate(-50%, -50%);">C++</div>
+            <div class="orbit-item" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);">JS</div>
+          </div>
+          <div class="skill-orbit__ring skill-orbit__ring--2">
+            <div class="orbit-item" style="top: 50%; left: 0; transform: translate(-50%, -50%);">Py</div>
+            <div class="orbit-item" style="top: 50%; right: 0; transform: translate(50%, -50%);">C</div>
+          </div>
+          <div class="skill-orbit__ring skill-orbit__ring--3">
+            <div class="orbit-item" style="top: 10%; right: 10%; transform: translate(50%, -50%);">Git</div>
+            <div class="orbit-item" style="bottom: 10%; left: 10%; transform: translate(-50%, 50%);">SQL</div>
+          </div>
+        </div>
+
+        <div class="skills__grid stagger">
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">💻</span> Programming Languages</h3>
+            <div class="skill-items">
+              <span class="skill-item">C</span>
+              <span class="skill-item">C++</span>
+              <span class="skill-item">Java</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">🛠️</span> Frameworks & Libraries</h3>
+            <div class="skill-items">
+              <span class="skill-item">HTML5</span>
+              <span class="skill-item">CSS3</span>
+              <span class="skill-item">React</span>
+              <span class="skill-item">Node.js</span>
+              <span class="skill-item">Express.js</span>
+              <span class="skill-item">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">🔧</span> Developer Tools</h3>
+            <div class="skill-items">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">GitHub</span>
+              <span class="skill-item">VS Code</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">☁️</span> Cloud & Databases</h3>
+            <div class="skill-items">
+              <span class="skill-item">MongoDB</span>
+              <span class="skill-item">SQL</span>
+              <span class="skill-item">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">📘</span> Coursework</h3>
+            <div class="skill-items">
+              <span class="skill-item">Data Structures & Algorithms</span>
+              <span class="skill-item">OOPs</span>
+              <span class="skill-item">Discrete Mathematics</span>
+              <span class="skill-item">Digital Logic Design</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card reveal">
+            <h3 class="skill-category__title"><span class="icon">🎯</span> Areas of Interest</h3>
+            <div class="skill-items">
+              <span class="skill-item">Competitive Programming</span>
+              <span class="skill-item">Software Development</span>
+              <span class="skill-item">Problem Solving</span>
+              <span class="skill-item">Full Stack Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 5: ACHIEVEMENTS ========== -->
+    <!-- PRD Section 19                                -->
+    <section id="achievements" class="achievements" aria-label="Achievements">
+      <div class="container">
+        <div class="section-label reveal">Achievements</div>
+        <h2 class="section-title reveal">Milestones & <span class="text-gradient">Awards</span></h2>
+
+        <!-- Statistics Counters -->
+        <div class="achievement-stats stagger">
+          <div class="achievement-stat glass-card reveal">
+            <span class="achievement-stat__number" data-count="300" data-suffix="+">0+</span>
+            <p class="achievement-stat__label">Problems Solved</p>
+          </div>
+          <div class="achievement-stat glass-card reveal">
+            <span class="achievement-stat__number" data-count="1450" data-suffix="+">0+</span>
+            <p class="achievement-stat__label">LeetCode Rating</p>
+          </div>
+          <div class="achievement-stat glass-card reveal">
+            <span class="achievement-stat__number" data-count="1430" data-suffix="">0</span>
+            <p class="achievement-stat__label">CodeChef Peak</p>
+          </div>
+          <div class="achievement-stat glass-card reveal">
+            <span class="achievement-stat__number" data-count="2" data-suffix="★">0★</span>
+            <p class="achievement-stat__label">CodeChef Rating</p>
+          </div>
+        </div>
+
+        <!-- Achievement Cards -->
+        <div class="achievement-cards stagger">
+          <div class="achievement-card glass-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">🏅</div>
+            <h3 class="achievement-card__title">LeetCode Champion</h3>
+            <p class="achievement-card__desc">Solved 300+ problems on LeetCode with a maximum contest rating of 1450+. Specialized in dynamic programming, graphs, and algorithmic optimization.</p>
+          </div>
+          <div class="achievement-card glass-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">⭐</div>
+            <h3 class="achievement-card__title">CodeChef 2-Star</h3>
+            <p class="achievement-card__desc">Achieved 2-Star rating on CodeChef with a peak rating of 1430, consistently competing in monthly coding challenges and improving problem-solving skills.</p>
+          </div>
+          <div class="achievement-card glass-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">🚀</div>
+            <h3 class="achievement-card__title">Hack With India</h3>
+            <p class="achievement-card__desc">Active contributor and leader in the Hack With India community at MMMUT, driving hackathon participation and fostering a culture of innovation.</p>
+          </div>
+          <div class="achievement-card glass-card reveal">
+            <div class="achievement-card__icon" aria-hidden="true">🎓</div>
+            <h3 class="achievement-card__title">Academic Excellence</h3>
+            <p class="achievement-card__desc">Maintaining a strong CGPA of 8.33 in B.Tech CSE at MMMUT while actively participating in competitive programming and community leadership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 6: CONTACT ========== -->
+    <!-- PRD Section 20                            -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-label reveal" style="justify-content: center;">Get In Touch</div>
+        <h2 class="contact__heading reveal">
+          Let's Build Something <span class="text-gradient">Amazing</span> Together
+        </h2>
+        <p class="contact__subtitle reveal">
+          I'm always excited to connect with fellow developers, explore new opportunities, and collaborate on innovative projects. Let's create something extraordinary.
+        </p>
+
+        <!-- Contact Email -->
+        <a href="mailto:ssy260319@mail.com" class="contact__email reveal magnetic-btn" id="contact-email" aria-label="Send email">
+          ssy260319@mail.com
+        </a>
+
+        <!-- Contact Links -->
+        <div class="contact__links stagger">
+          <a href="https://github.com/ShubhamSinghYadav005" target="_blank" rel="noopener noreferrer" class="contact-link reveal" id="link-github" aria-label="GitHub Profile">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/shubham-singh-ssy260319/" target="_blank" rel="noopener noreferrer" class="contact-link reveal" id="link-linkedin" aria-label="LinkedIn Profile">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://leetcode.com/u/__shubham_005/" target="_blank" rel="noopener noreferrer" class="contact-link reveal" id="link-leetcode" aria-label="LeetCode Profile">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+            <span>LeetCode</span>
+          </a>
+          <a href="mailto:ssy260319@mail.com" class="contact-link reveal" id="link-email-alt" aria-label="Send Email">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Email</span>
+          </a>
+          <a href="resume/resume.pdf" download class="contact-link reveal" id="link-resume-download" aria-label="Download Resume">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Resume</span>
+          </a>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="reveal" style="margin-top: var(--space-xl);">
+          <a href="mailto:ssy260319@mail.com" class="btn btn--primary magnetic-btn" id="cta-final" style="font-size: 1.05rem; padding: 16px 40px;">
+            <span>Say Hello</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                        -->
+  <!-- ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">
+          &copy; 2026 Shubham Singh. Crafted with precision and passion.
+        </p>
+        <div class="footer__links">
+          <a href="https://github.com/ShubhamSinghYadav005" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+          <a href="https://www.linkedin.com/in/shubham-singh-ssy260319/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+          <a href="https://leetcode.com/u/__shubham_005/" target="_blank" rel="noopener noreferrer" class="footer__link">LeetCode</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (ES6 Modules) -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Noscript Fallback - PRD Section 36 -->
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .nav { transform: translateY(0) !important; }
+      .video-layer { display: none; }
+      .video-overlay { background: var(--bg-primary); }
+      body { overflow-x: hidden; }
+    </style>
+  </noscript>
+</body>
+</html>
